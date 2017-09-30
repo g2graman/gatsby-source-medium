@@ -4,18 +4,18 @@
   "version": "1.0.0",
   "description": "Gatsby example site that shows how to use the Medium source plugin",
   "main": "index.js",
-  "author": "Robert Vogt <robert@smartive.ch>",
+  "author": "Francesco Gramano <fran.gramano@mail.utoronto.ca>",
   "license": "MIT",
   "dependencies": {
     "gatsby": "latest",
     "gatsby-link": "latest",
-    "gatsby-source-medium": "^1.0.1"
+    "gatsby-source-medium": "file:../.."
   },
   "keywords": [
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "npm install ../../ && gatsby develop",
     "build": "gatsby build"
   }
 }

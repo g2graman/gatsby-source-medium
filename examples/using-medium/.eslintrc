@@ -3,6 +3,6 @@
     "browser": true
   },
   "globals": {
-    "graphql": false
+    "graphql": true
   }
 }
