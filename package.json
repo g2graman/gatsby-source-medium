@@ -1,7 +1,7 @@
 {
   "name": "gatsby-source-medium",
   "description": "Gatsby source plugin for building websites using Medium as a data source",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "author": "Francesco Gramano <fran.gramano@mail.utoronto.ca>",
   "dependencies": {
     "axios": "^0.16.2",
@@ -32,6 +32,7 @@
     "build": "npx babel-cli src --out-dir . --ignore __tests__",
     "install": "npm run build",
     "prepublish": "npx cross-env NODE_ENV=production npm run build",
+    "develop": "npx nodemon -e js,jsx --watch src --watch examples/using-medium/src -x \" npm pack && npm --prefix ./examples/using-medium install gatsby-source-medium*.tgz && npm --prefix ./examples/using-medium run develop \"",
     "watch": "npx babel-cli -w src --out-dir . --ignore __tests__"
   }
 }

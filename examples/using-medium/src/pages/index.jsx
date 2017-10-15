@@ -1,7 +1,8 @@
-import React, {Component} from "react"
+import React, {Component} from "react";
 
 const mediumCDNUrl = `https://cdn-images-1.medium.com/max/150/`;
 const getMediumImageSrc = (post) => `${mediumCDNUrl}/${post.node.virtuals.previewImage.imageId}`;
+const getPostImageCount = (post) => post.node.virtuals.imageCount;
 
 export default class IndexPage extends Component {
   constructor (props) {
@@ -10,7 +11,6 @@ export default class IndexPage extends Component {
 
   render () {
       const posts = this.props.data.allMediumPost.edges;
-      console.log(posts);
 
       return (
           <main>
@@ -19,11 +19,18 @@ export default class IndexPage extends Component {
                       <article key={post.node.id}>
                         <h2>{post.node.title}</h2>
                         <h3>by {post.node.author.name}</h3>
-                        <img
-                            src={getMediumImageSrc(post)}
-                            alt={post.node.title}
-                            width="150"
-                        />
+                          {
+                              getPostImageCount(post) > 0
+                                ? (
+                                      <img
+                                          src={getMediumImageSrc(post)}
+                                          alt={post.node.title}
+                                          width="150"
+                                      />
+                                  ) : (
+                                      null
+                                  )
+                          }
                       </article>
                   ))
               }
@@ -34,18 +41,18 @@ export default class IndexPage extends Component {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMediumPost(limit: 5, sort: { fields: [createdAt], order: DESC }) {
+    allMediumPost(limit: 5) {
       edges {
         node {
           id
           slug
           title
-          createdAt
           virtuals {
             subtitle
             previewImage {
               imageId
             }
+            imageCount
           }
           author {
             name

@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-example-using-medmium",
+  "name": "gatsby-example-using-medium",
   "private": true,
   "version": "1.0.0",
   "description": "Gatsby example site that shows how to use the Medium source plugin",
@@ -9,13 +9,14 @@
   "dependencies": {
     "gatsby": "latest",
     "gatsby-link": "latest",
-    "gatsby-source-medium": "file:../.."
+    "gatsby-source-medium": "file:../../gatsby-source-medium-1.1.0.tgz",
+    "react": "^16.0.0"
   },
   "keywords": [
     "gatsby"
   ],
   "scripts": {
-    "develop": "npm install ../../ && gatsby develop",
+    "develop": "gatsby develop",
     "build": "gatsby build"
   }
 }

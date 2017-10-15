@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Using Medium`,
+    title: "Using Medium",
   },
   plugins: [
     {
-      resolve: `gatsby-source-medium`,
+      resolve: "gatsby-source-medium",
       options: {
-        username: `@francescog`,
+        username: "@francescog"
       },
-    },
-  ],
+    }
+  ]
 };

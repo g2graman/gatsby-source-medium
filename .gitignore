@@ -4,3 +4,4 @@ examples/using-medium/public/
 examples/using-medium/.cache/
 gatsby-node.js
 .idea/
+*.tgz
